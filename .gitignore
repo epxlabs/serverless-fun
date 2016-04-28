@@ -9,3 +9,8 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
+
+output.txt
+
+resources/test/output/*
+!resources/test/output/.keep

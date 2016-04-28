@@ -1,1 +1,0 @@
-{"errorMessage":"Class not found: serverless-fun.hello","errorType":"class java.lang.ClassNotFoundException"}
