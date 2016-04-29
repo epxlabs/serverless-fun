@@ -7,8 +7,10 @@
             [clojure.pprint :refer [pprint]]))
 
 (defn say-hello [data]
-  (pprint data)
-  (str "Nice to meet you Mr. " (:first-name data) ". May I call you " (:last-name data)))
+  ;;(pprint data)
+  ;;(str "Nice to meet you Mr. " (:first-name data) ". May I call you "
+  ;(:last-name data))
+  data)
 
 (defn -handleRequest [this is os context]
   (let [w (io/writer os)]
