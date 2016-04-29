@@ -8,10 +8,8 @@
 
 ;; Force output to a string
 (defn say-hello [data]
-  ;;(pprint data)
-  ;;(str "Nice to meet you Mr. " (:first-name data) ". May I call you "
-  ;(:last-name data))
-  (str data))
+  (pprint data)
+  (str "Nice to meet you Mr. " (:last-name data) ". May I call you " (:first-name data) "?"))
 
 (defn -handleRequest [this is os context]
   (let [w (io/writer os)]
