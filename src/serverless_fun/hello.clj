@@ -1,4 +1,4 @@
-(ns hello
+(ns serverless-fun.hello
   (:gen-class
    :methods [^:static [handler [String] String]]))
 

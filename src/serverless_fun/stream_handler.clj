@@ -1,4 +1,4 @@
-(ns stream-handler
+(ns serverless-fun.stream-handler
   (:gen-class
    :implements [com.amazonaws.services.lambda.runtime.RequestStreamHandler])
   (:require [clojure.data.json :as json]
