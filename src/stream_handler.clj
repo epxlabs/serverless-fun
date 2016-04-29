@@ -6,15 +6,18 @@
             [clojure.java.io :as io]
             [clojure.pprint :refer [pprint]]))
 
+;; Force output to a string
 (defn say-hello [data]
   ;;(pprint data)
   ;;(str "Nice to meet you Mr. " (:first-name data) ". May I call you "
   ;(:last-name data))
-  data)
+  (str data))
 
 (defn -handleRequest [this is os context]
   (let [w (io/writer os)]
-    (-> (json/read (io/reader is) :key-fn keyword)
+  ;; Use the double threading macro to push arguments to end instead of second
+    (->> (json/read (io/reader is) :key-fn keyword)
         (say-hello)
-        (json/write w))
+        ;; Write String to the writer
+        (.write w))
     (.flush w)))
