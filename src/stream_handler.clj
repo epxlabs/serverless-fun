@@ -14,7 +14,7 @@
 
 (defn -handleRequest [this is os context]
   (let [w (io/writer os)]
-    (-> (json/read (io/reader is))
+    (-> (json/read (io/reader is) :key-fn keyword)
         (say-hello)
         (json/write w))
     (.flush w)))
